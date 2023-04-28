@@ -1,0 +1,37 @@
+html {
+  font-size: 10px;
+}
+
+
+.keyboard {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid deeppink;
+  background-color: antiquewhite;
+  width: 95rem;
+}
+
+.btn {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid pink;
+  border-radius: 2px;
+  background-color: hotpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s;
+
+  &_wide {
+    min-width: 10rem;
+    flex-grow: 1;
+  }
+
+  &_pushed {
+    background-color: aquamarine;
+  }
+}
+
