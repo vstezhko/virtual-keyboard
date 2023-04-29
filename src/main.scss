@@ -1,10 +1,18 @@
+@import "sass/normalize.css";
+
 html {
   font-size: 10px;
 }
 
 
+textarea {
+  width: 95rem;
+  height: 200px;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
 .keyboard {
-  width: 1000px;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -24,6 +32,7 @@ html {
   justify-content: center;
   align-items: center;
   transition: all 0.1s;
+  font-size: 1.6rem;
 
   &_wide {
     min-width: 10rem;
