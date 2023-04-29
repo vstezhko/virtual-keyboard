@@ -35,8 +35,13 @@ textarea {
   font-size: 1.6rem;
 
   &_wide {
-    min-width: 10rem;
+    min-width: 8rem;
     flex-grow: 1;
+  }
+
+  &_extrawide {
+    min-width: 10rem;
+    flex-grow: 2;
   }
 
   &_pushed {

@@ -2,16 +2,25 @@
 
 const styles = {
     small: 'btn',
-    wide: 'btn btn_wide'
+    wide: 'btn btn_wide',
+    extrawide: 'btn btn_extrawide',
 }
 
 const actions = {
 
     backspace(node){
         const start = node.selectionStart-1;
-        node.value = node.value.slice(0, start) + node.value.slice(start + 1);
-        node.selectionStart = start
-        node.selectionEnd = start
+        const end = node.selectionEnd-1;
+        console.log(start, end)
+        if (start === end) {
+            node.value = node.value.slice(0, start) + node.value.slice(start + 1);
+            node.selectionStart = start
+            node.selectionEnd = start
+        } else {
+            node.value = node.value.slice(0, start + 1) + node.value.slice(end + 1);
+            node.selectionStart = start + 1
+            node.selectionEnd = start + 1
+        }
     },
 
     tab(node){

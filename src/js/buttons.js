@@ -270,6 +270,17 @@ export const buttons = [
         value: {
             en: 'o'
         },
+        code: 'KeyO',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'P'
+        },
+        value: {
+            en: 'p'
+        },
         code: 'KeyP',
     },
     {
@@ -450,7 +461,7 @@ export const buttons = [
         code: 'Quote',
     },
     {
-        size: 'wide',
+        size: 'extrawide',
         btnType: 'service',
         name: {
             en: 'Enter'
