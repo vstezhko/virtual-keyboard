@@ -4,37 +4,6 @@ import {buttons} from "./js/buttons";
 import {InputButton, ServiceButton} from "./js/Button";
 
 
-let isCapsDown = false
-let isShiftDown = false
-
-const toggleShiftValue = () => {
-    if (isShiftDown === true) {
-        return
-    }
-
-    if (localStorage.getItem('isShiftPushed') === 'true') {
-        localStorage.setItem('isShiftPushed', 'false')
-    } else {
-        localStorage.setItem('isShiftPushed', 'true')
-    }
-
-    isShiftDown = true
-}
-
-const toggleCapsValue = () => {
-    if (isCapsDown === true) {
-        return
-    }
-
-    if (localStorage.getItem('isCapsPushed') === 'true') {
-        localStorage.setItem('isCapsPushed', 'false')
-    } else {
-        localStorage.setItem('isCapsPushed', 'true')
-    }
-
-    isCapsDown = true
-}
-
 window.onload = function(){
 
     const body = document.querySelector('body')
@@ -44,24 +13,30 @@ window.onload = function(){
     keyboard.classList.add('keyboard')
     body.append(keyboard)
 
+
+    const mousedownEvent = new MouseEvent('mousedown', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+    });
+
+    const mouseupEvent = new MouseEvent('mouseup', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+    });
+
     document.addEventListener('keydown', (e) => {
         textArea.focus();
-        console.log(e.key)
-        if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {toggleShiftValue()}
-        if (e.code === 'CapsLock') {toggleCapsValue()}
+        e.preventDefault();
         const pushedBtn = document.querySelector(`.${e.code}`)
-        pushedBtn && pushedBtn.classList.add('btn_pushed')
+        pushedBtn.dispatchEvent(mousedownEvent);
     })
 
     document.addEventListener('keyup', (e) => {
+        e.preventDefault();
         const pushedBtn = document.querySelector(`.${e.code}`)
-        if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
-            isShiftDown = false
-            toggleShiftValue()
-            isShiftDown = false
-        }
-        if (e.code === 'CapsLock') {isCapsDown = false}
-        pushedBtn && pushedBtn.classList.remove('btn_pushed')
+        pushedBtn.dispatchEvent(mouseupEvent);
     })
 
     document.addEventListener('click', () => {

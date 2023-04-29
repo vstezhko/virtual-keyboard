@@ -1,4 +1,4 @@
-import {logPlugin} from "@babel/preset-env/lib/debug";
+
 
 const styles = {
     small: 'btn',
@@ -28,12 +28,26 @@ const actions = {
         node.selectionEnd = start
     },
 
-    capsLock(node) {
-        if (localStorage.getItem('isCapsPushed') === 'true') {
-            localStorage.setItem('isCapsPushed', 'false')
-        } else {
-            localStorage.setItem('isCapsPushed', 'true')
+    capsLock() {
+        if (this.isCapsDown === false) {
+            if (localStorage.getItem('isCapsPushed') === 'true') {
+                localStorage.setItem('isCapsPushed', 'false')
+            } else {
+                localStorage.setItem('isCapsPushed', 'true')
+            }
         }
+        this.isCapsDown = true
+    },
+
+    shift() {
+        if (this.isShiftDown === false) {
+            if (localStorage.getItem('isShiftPushed') === 'true') {
+                localStorage.setItem('isShiftPushed', 'false')
+            } else {
+                localStorage.setItem('isShiftPushed', 'true')
+            }
+        }
+        this.isShiftDown = true
     },
 
     enter(node) {
@@ -41,7 +55,10 @@ const actions = {
         node.value = node.value.slice(0, start) + '\n' + node.value.slice(start);
         node.selectionStart = start + 1
         node.selectionEnd = start + 1
-    }
+    },
+
+    isCapsDown: false,
+    isShiftDown: false,
 }
 
 export class Button {
@@ -64,6 +81,12 @@ export class Button {
         })
         btn.addEventListener('mouseup', () => {
             btn.classList.remove('btn_pushed')
+            if (this.code === 'ShiftLeft' || this.code === 'ShiftRight') {
+                actions.isShiftDown = false
+                actions.shift()
+                actions.isShiftDown = false
+            }
+            if (this.code === 'CapsLock') {actions.isCapsDown = false}
         })
         return btn
     }
@@ -80,7 +103,6 @@ export class InputButton extends Button {
         const isShiftPushed = localStorage.getItem('isShiftPushed') === 'true'
         const isCapsPushed = localStorage.getItem('isCapsPushed') === 'true'
         const start = placeNode.selectionStart;
-
 
         if (!isShiftPushed && isCapsPushed) {
             placeNode.value = placeNode.value.slice(0, start) + this.value.toUpperCase() + placeNode.value.slice(start);

@@ -458,4 +458,135 @@ export const buttons = [
         action: 'enter',
         code: 'Enter',
     },
+    {
+        size: 'wide',
+        btnType: 'service',
+        name: {
+            en: 'Shift'
+        },
+        action: 'shift',
+        code: 'ShiftLeft',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'Z'
+        },
+        value: {
+            en: 'z'
+        },
+        code: 'KeyZ',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'X'
+        },
+        value: {
+            en: 'x'
+        },
+        code: 'KeyX',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'C'
+        },
+        value: {
+            en: 'c'
+        },
+        code: 'KeyC',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'V'
+        },
+        value: {
+            en: 'v'
+        },
+        code: 'KeyV',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'B'
+        },
+        value: {
+            en: 'b'
+        },
+        code: 'KeyB',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'N'
+        },
+        value: {
+            en: 'n'
+        },
+        code: 'KeyN',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: 'M'
+        },
+        value: {
+            en: 'm'
+        },
+        code: 'KeyM',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: ','
+        },
+        value: {
+            en: ','
+        },
+        shiftName: '<',
+        code: 'Comma',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: '.'
+        },
+        value: {
+            en: '.'
+        },
+        shiftName: '>',
+        code: 'Period',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: '/'
+        },
+        value: {
+            en: '/'
+        },
+        shiftName: '/',
+        code: 'Slash',
+    },
+    {
+        size: 'wide',
+        btnType: 'service',
+        name: {
+            en: 'Shift'
+        },
+        action: 'shift',
+        code: 'ShiftRight',
+    },
 ]
