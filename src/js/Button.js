@@ -77,27 +77,6 @@ const actions = {
 
     },
 
-    up(node) {
-        const pos = node.selectionStart;
-        const value = node.value;
-        const rows = value.slice(0, pos).split('\n');
-        const row = rows.length - 2; // уменьшаем на 2, т.к. нумерация строк начинается с 0
-        const column = rows[row].length;
-        node.setSelectionRange(value.indexOf(rows[row]), column);
-    },
-
-    left() {
-
-    },
-
-    down() {
-
-    },
-
-    right() {
-
-    },
-
     isCapsDown: false,
     isShiftDown: false,
 }
@@ -117,6 +96,14 @@ export class Button {
         btn.innerHTML = this.name
         btn.classList = styles[this.size]
         btn.classList.add(this.code)
+
+        if (this.shiftName) {
+            const addName = document.createElement('div')
+            addName.classList.add('add-name')
+            addName.innerHTML = this.shiftName
+            btn.appendChild(addName)
+        }
+
         btn.addEventListener('mousedown', () => {
             btn.classList.add('btn_pushed')
         })

@@ -2,6 +2,7 @@
 
 html {
   font-size: 10px;
+  font-family: sans-serif;
 }
 
 
@@ -23,16 +24,16 @@ textarea {
 }
 
 .btn {
-  width: 5rem;
+  width: 5.2rem;
   height: 5rem;
-  border: 1px solid pink;
   border-radius: 4px;
   background-color: hotpink;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.1s;
+  transition: all 0.2s;
   font-size: 1.6rem;
+  position: relative;
 
   &_wide {
     min-width: 11rem;
@@ -40,12 +41,25 @@ textarea {
   }
 
   &_extrawide {
-    min-width: 14rem;
+    min-width: 15rem;
     flex-grow: 2;
   }
 
   &_pushed {
     background-color: aquamarine;
+    border-radius: 15px;
   }
+}
+
+.add-name {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
 }
 
