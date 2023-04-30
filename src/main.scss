@@ -31,7 +31,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s;
+  transition: all 0.1s;
   font-size: 1.6rem;
   position: relative;
 
@@ -46,7 +46,7 @@ textarea {
   }
 
   &_pushed {
-    background-color: aquamarine;
+    background-color: complement(hotpink);
     border-radius: 15px;
   }
 }

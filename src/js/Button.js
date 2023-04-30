@@ -77,9 +77,14 @@ const actions = {
 
     },
 
+
     isCapsDown: false,
     isShiftDown: false,
+    mousedownNode: null,
 }
+
+
+
 
 export class Button {
     constructor({...btn}) {
@@ -105,16 +110,33 @@ export class Button {
         }
 
         btn.addEventListener('mousedown', () => {
-            btn.classList.add('btn_pushed')
+            actions.mousedownNode = btn
+
+            if (this.code === 'CapsLock') {
+                !(localStorage.getItem('isCapsPushed') === 'true') ? btn.classList.add('btn_pushed') : btn.classList.remove('btn_pushed')
+            } else {
+                btn.classList.add('btn_pushed')
+            }
+
         })
         btn.addEventListener('mouseup', () => {
-            btn.classList.remove('btn_pushed')
+
+            if (!(this.code === 'CapsLock')) {
+                btn.classList.remove('btn_pushed')
+            }
+
             if (this.code === 'ShiftLeft' || this.code === 'ShiftRight') {
                 actions.isShiftDown = false
                 actions.shift()
                 actions.isShiftDown = false
             }
             if (this.code === 'CapsLock') {actions.isCapsDown = false}
+        })
+
+        btn.addEventListener('mouseleave', () => {
+            if (!(this.code === 'CapsLock')) {
+                btn.classList.remove('btn_pushed')
+            }
         })
         return btn
     }
