@@ -29,6 +29,7 @@ window.onload = function(){
     document.addEventListener('keydown', (e) => {
         textArea.focus();
         e.preventDefault();
+        console.log(e.code)
         const pushedBtn = document.querySelector(`.${e.code}`)
         pushedBtn.dispatchEvent(mousedownEvent);
     })

@@ -6,7 +6,7 @@ html {
 
 
 textarea {
-  width: 95rem;
+  width: 98rem;
   height: 200px;
   font-size: 2rem;
   padding: 1rem;
@@ -19,14 +19,14 @@ textarea {
   padding: 1rem;
   border: 1px solid deeppink;
   background-color: antiquewhite;
-  width: 95rem;
+  width: 98rem;
 }
 
 .btn {
   width: 5rem;
   height: 5rem;
   border: 1px solid pink;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: hotpink;
   display: flex;
   justify-content: center;
@@ -35,12 +35,12 @@ textarea {
   font-size: 1.6rem;
 
   &_wide {
-    min-width: 8rem;
+    min-width: 11rem;
     flex-grow: 1;
   }
 
   &_extrawide {
-    min-width: 10rem;
+    min-width: 14rem;
     flex-grow: 2;
   }
 

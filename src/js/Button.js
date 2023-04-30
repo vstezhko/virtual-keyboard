@@ -11,7 +11,6 @@ const actions = {
     backspace(node){
         const start = node.selectionStart-1;
         const end = node.selectionEnd-1;
-        console.log(start, end)
         if (start === end) {
             node.value = node.value.slice(0, start) + node.value.slice(start + 1);
             node.selectionStart = start
@@ -64,6 +63,39 @@ const actions = {
         node.value = node.value.slice(0, start) + '\n' + node.value.slice(start);
         node.selectionStart = start + 1
         node.selectionEnd = start + 1
+    },
+
+    ctrl() {
+
+    },
+
+    win() {
+
+    },
+
+    alt() {
+
+    },
+
+    up(node) {
+        const pos = node.selectionStart;
+        const value = node.value;
+        const rows = value.slice(0, pos).split('\n');
+        const row = rows.length - 2; // уменьшаем на 2, т.к. нумерация строк начинается с 0
+        const column = rows[row].length;
+        node.setSelectionRange(value.indexOf(rows[row]), column);
+    },
+
+    left() {
+
+    },
+
+    down() {
+
+    },
+
+    right() {
+
     },
 
     isCapsDown: false,

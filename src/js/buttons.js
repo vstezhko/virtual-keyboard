@@ -470,7 +470,7 @@ export const buttons = [
         code: 'Enter',
     },
     {
-        size: 'wide',
+        size: 'extrawide',
         btnType: 'service',
         name: {
             en: 'Shift'
@@ -592,6 +592,17 @@ export const buttons = [
         code: 'Slash',
     },
     {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: '↑'
+        },
+        value: {
+            en: '↑'
+        },
+        code: 'ArrowUp',
+    },
+    {
         size: 'wide',
         btnType: 'service',
         name: {
@@ -599,5 +610,94 @@ export const buttons = [
         },
         action: 'shift',
         code: 'ShiftRight',
+    },
+    {
+        size: 'small',
+        btnType: 'service',
+        name: {
+            en: 'Ctrl'
+        },
+        action: 'ctrl',
+        code: 'ControlLeft',
+    },
+    {
+        size: 'small',
+        btnType: 'service',
+        name: {
+            en: 'Win'
+        },
+        action: 'win',
+        code: 'MetaLeft',
+    },
+    {
+        size: 'small',
+        btnType: 'service',
+        name: {
+            en: 'Alt'
+        },
+        action: 'alt',
+        code: 'AltLeft',
+    },
+    {
+        size: 'extrawide',
+        btnType: 'input',
+        name: {
+            en: ''
+        },
+        value: {
+            en: ' '
+        },
+        code: 'Space',
+    },
+    {
+        size: 'small',
+        btnType: 'service',
+        name: {
+            en: 'Alt'
+        },
+        action: 'alt',
+        code: 'AltRight',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: '←'
+        },
+        value: {
+            en: '←'
+        },
+        code: 'ArrowLeft',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: '↓'
+        },
+        value: {
+            en: '↓'
+        },
+        code: 'ArrowDown',
+    },
+    {
+        size: 'small',
+        btnType: 'input',
+        name: {
+            en: '→'
+        },
+        value: {
+            en: '→'
+        },
+        code: 'ArrowRight',
+    },
+    {
+        size: 'small',
+        btnType: 'service',
+        name: {
+            en: 'Ctrl'
+        },
+        action: 'ctrl',
+        code: 'ControlRight',
     },
 ]
