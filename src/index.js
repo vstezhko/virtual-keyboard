@@ -1,17 +1,25 @@
 import './index.html';
 import './main.scss';
-import {buttons} from "./js/buttons";
+import {buttonsEn} from "./js/buttonsEn";
+import {buttonsRu} from "./js/buttonsRu";
 import {InputButton, ServiceButton} from "./js/Button";
 
 
 window.onload = function(){
 
+
+
     const body = document.querySelector('body')
-    const textArea = document.querySelector('textarea')
-    textArea.focus();
+    const textArea = document.createElement('textarea')
     const keyboard = document.createElement('section')
     keyboard.classList.add('keyboard')
+    body.append(textArea)
     body.append(keyboard)
+    textArea.focus();
+    const info = document.createElement('div')
+    info.innerHTML += `<p>Клавиатура создана в операционной системе Windows</p>`
+    info.innerHTML += `<p>Для переключения языка комбинация: левыe ctrl + alt</p>`
+    body.append(info)
 
 
     const mousedownEvent = new MouseEvent('mousedown', {
@@ -29,9 +37,10 @@ window.onload = function(){
     document.addEventListener('keydown', (e) => {
         textArea.focus();
         e.preventDefault();
-        console.log(e.code)
         const pushedBtn = document.querySelector(`.${e.code}`)
-        pushedBtn.dispatchEvent(mousedownEvent);
+        pushedBtn.dispatchEvent(mousedownEvent)
+
+        handleChangeLang()
     })
 
     document.addEventListener('keyup', (e) => {
@@ -44,18 +53,59 @@ window.onload = function(){
         textArea.focus();
     })
 
+    const keyboardLayouts = {
+        'buttonsRu': buttonsRu,
+        'buttonsEn': buttonsEn
+    }
 
-    buttons.forEach(btn => {
-        let newBtn
+    let activeLang = localStorage.getItem('lang') || 'buttonsRu'
 
-        if (btn.btnType === 'input') {
-            newBtn = new InputButton({...btn})
+    let buttons = keyboardLayouts[activeLang]
+
+    const handleChangeLang = () => {
+
+        const alt = localStorage.getItem('isAltPushed')
+        const ctrl = localStorage.getItem('isCtrlPushed')
+
+        if (alt === 'true' && ctrl === 'true') {
+
+            console.log(activeLang)
+            if (activeLang === 'buttonsRu') {
+                activeLang = 'buttonsEn'
+                buttons = keyboardLayouts[activeLang]
+            } else {
+                activeLang = 'buttonsRu'
+                buttons = keyboardLayouts[activeLang]
+            }
+
+            renderButtons(buttons)
+
+            const altNode = document.querySelector('.AltLeft')
+            altNode.classList.add('btn_pushed')
+            const ctrlNode = document.querySelector('.ControlLeft')
+            ctrlNode.classList.add('btn_pushed')
         }
 
-        if (btn.btnType === 'service') {
-            newBtn = new ServiceButton({...btn})
-        }
+    }
 
-        newBtn && keyboard.append(newBtn.getButtonNode(textArea))
-    })
+    const renderButtons = (buttons) => {
+        console.log('render')
+        keyboard.innerHTML = ''
+        buttons.forEach(btn => {
+            let newBtn
+
+            if (btn.btnType === 'input') {
+                newBtn = new InputButton({...btn})
+            }
+
+            if (btn.btnType === 'service') {
+                newBtn = new ServiceButton({...btn})
+            }
+
+            newBtn && keyboard.append(newBtn.getButtonNode(textArea))
+        })
+    }
+
+    renderButtons(buttons)
+
 }

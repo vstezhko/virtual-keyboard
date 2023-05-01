@@ -1,702 +1,470 @@
-export const buttons = [
+export const buttonsEn = [
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '`'
-        },
-        value: {
-            en: '`'
-        },
+        name: '`',
+        value:'`',
         code: 'Backquote',
         shiftName: '~',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '1'
-        },
-        value: {
-            en: '1'
-        },
+        name:'1',
+        value: '1',
         code: 'Digit1',
         shiftName: '!',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '2'
-        },
-        value: {
-            en: '2'
-        },
+        name: '2',
+        value: '2',
         code: 'Digit2',
         shiftName: '@',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '3'
-        },
-        value: {
-            en: '3'
-        },
+        name: '3',
+        value: '3',
         code: 'Digit3',
         shiftName: '#',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '4'
-        },
-        value: {
-            en: '4'
-        },
+        name: '4',
+        value: '4',
         code: 'Digit4',
         shiftName: '$',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '5'
-        },
-        value: {
-            en: '5'
-        },
+        name: '5',
+        value: '5',
         code: 'Digit5',
         shiftName: '%',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '6'
-        },
-        value: {
-            en: '6'
-        },
+        name: '6',
+        value: '6',
         code: 'Digit6',
         shiftName: '^',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '7'
-        },
-        value: {
-            en: '7'
-        },
+        name: '7',
+        value: '7',
         code: 'Digit7',
         shiftName: '&',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '8'
-        },
-        value: {
-            en: '8'
-        },
+        name: '8',
+        value: '8',
         code: 'Digit8',
         shiftName: '*',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '9'
-        },
-        value: {
-            en: '9'
-        },
+        name: '9',
+        value: '9',
         code: 'Digit9',
         shiftName: '(',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '0'
-        },
-        value: {
-            en: '0'
-        },
+        name: '0',
+        value:'0',
         code: 'Digit0',
         shiftName: ')',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '-'
-        },
-        value: {
-            en: '-'
-        },
+        name: '-',
+        value: '-',
         code: 'Minus',
         shiftName: '_',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '='
-        },
-        value: {
-            en: '='
-        },
+        name: '=',
+        value: '=',
         code: 'Equal',
         shiftName: '+',
     },
     {
         size: 'wide',
         btnType: 'service',
-        name: {
-            en: 'BACKSPACE'
-        },
+        name: 'BACKSPACE',
         action: 'backspace',
         code: 'Backspace',
     },
     {
         size: 'wide',
         btnType: 'service',
-        name: {
-            en: 'Tab'
-        },
+        name: 'Tab',
         action: 'tab',
         code: 'Tab',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'Q'
-        },
-        value: {
-            en: 'q'
-        },
+        name: 'Q',
+        value: 'q',
         code: 'KeyQ',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'W'
-        },
-        value: {
-            en: 'w'
-        },
+        name:'W',
+        value: 'w',
         code: 'KeyW',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'E'
-        },
-        value: {
-            en: 'e'
-        },
+        name: 'E',
+        value: 'e',
         code: 'KeyE',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'R'
-        },
-        value: {
-            en: 'r'
-        },
+        name: 'R',
+        value: 'r',
         code: 'KeyR',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'T'
-        },
-        value: {
-            en: 't'
-        },
+        name: 'T',
+        value: 't',
         code: 'KeyT',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'Y'
-        },
-        value: {
-            en: 'y'
-        },
+        name: 'Y',
+        value: 'y',
         code: 'KeyY',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'U'
-        },
-        value: {
-            en: 'u'
-        },
+        name: 'U',
+        value: 'u',
         code: 'KeyU',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'I'
-        },
-        value: {
-            en: 'i'
-        },
+        name: 'I',
+        value: 'i',
         code: 'KeyI',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'O'
-        },
-        value: {
-            en: 'o'
-        },
+        name: 'O',
+        value: 'o',
         code: 'KeyO',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'P'
-        },
-        value: {
-            en: 'p'
-        },
+        name: 'P',
+        value: 'p',
         code: 'KeyP',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '['
-        },
-        value: {
-            en: '['
-        },
+        name: '[',
+        value: '[',
         code: 'BracketLeft',
         shiftName: '{',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: ']'
-        },
-        value: {
-            en: ']'
-        },
+        name: ']',
+        value: ']',
         code: 'BracketRight',
         shiftName: '}',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '\\'
-        },
-        value: {
-            en: '\\'
-        },
+        name: '\\',
+        value: '\\',
         code: 'Backslash',
         shiftName: '|',
     },
     {
         size: 'small',
         btnType: 'service',
-        name: {
-            en: 'DEL'
-        },
+        name: 'DEL',
         action: 'del',
         code: 'Delete',
     },
     {
         size: 'wide',
         btnType: 'service',
-        name: {
-            en: 'CapsLock'
-        },
+        name: 'CapsLock',
         action: 'capsLock',
         code: 'CapsLock',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'A'
-        },
-        value: {
-            en: 'a'
-        },
+        name: 'A',
+        value: 'a',
         code: 'KeyA',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'S'
-        },
-        value: {
-            en: 's'
-        },
+        name:'S',
+        value: 's',
         code: 'KeyS',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'D'
-        },
-        value: {
-            en: 'd'
-        },
+        name: 'D',
+        value: 'd',
         code: 'KeyD',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'F'
-        },
-        value: {
-            en: 'f'
-        },
+        name: 'F',
+        value: 'f',
         code: 'KeyF',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'G'
-        },
-        value: {
-            en: 'g'
-        },
+        name: 'G',
+        value: 'g',
         code: 'KeyG',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'H'
-        },
-        value: {
-            en: 'h'
-        },
+        name: 'H',
+        value: 'h',
         code: 'KeyH',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'J'
-        },
-        value: {
-            en: 'j'
-        },
+        name: 'J',
+        value: 'j',
         code: 'KeyJ',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'K'
-        },
-        value: {
-            en: 'k'
-        },
+        name: 'K',
+        value: 'k',
         code: 'KeyK',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'L'
-        },
-        value: {
-            en: 'l'
-        },
+        name: 'L',
+        value: 'l',
         code: 'KeyL',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: ';'
-        },
-        value: {
-            en: ';'
-        },
+        name: ';',
+        value: ';',
         shiftName: ':',
         code: 'Semicolon',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '\''
-        },
-        value: {
-            en: '\''
-        },
+        name: '\'',
+        value: '\'',
         shiftName: '"',
         code: 'Quote',
     },
     {
         size: 'extrawide',
         btnType: 'service',
-        name: {
-            en: 'Enter'
-        },
+        name: 'Enter',
         action: 'enter',
         code: 'Enter',
     },
     {
         size: 'extrawide',
         btnType: 'service',
-        name: {
-            en: 'Shift'
-        },
+        name: 'Shift',
         action: 'shift',
         code: 'ShiftLeft',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'Z'
-        },
-        value: {
-            en: 'z'
-        },
+        name: 'Z',
+        value: 'z',
         code: 'KeyZ',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'X'
-        },
-        value: {
-            en: 'x'
-        },
+        name: 'X',
+        value: 'x',
         code: 'KeyX',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'C'
-        },
-        value: {
-            en: 'c'
-        },
+        name: 'C',
+        value: 'c',
         code: 'KeyC',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'V'
-        },
-        value: {
-            en: 'v'
-        },
+        name: 'V',
+        value: 'v',
         code: 'KeyV',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'B'
-        },
-        value: {
-            en: 'b'
-        },
+        name: 'B',
+        value: 'b',
         code: 'KeyB',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'N'
-        },
-        value: {
-            en: 'n'
-        },
+        name: 'N',
+        value: 'n',
         code: 'KeyN',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: 'M'
-        },
-        value: {
-            en: 'm'
-        },
+        name: 'M',
+        value: 'm',
         code: 'KeyM',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: ','
-        },
-        value: {
-            en: ','
-        },
+        name: ',',
+        value: ',',
         shiftName: '<',
         code: 'Comma',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '.'
-        },
-        value: {
-            en: '.'
-        },
+        name: '.',
+        value: '.',
         shiftName: '>',
         code: 'Period',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '/'
-        },
-        value: {
-            en: '/'
-        },
+        name: '/',
+        value: '/',
         shiftName: '/',
         code: 'Slash',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '↑'
-        },
-        value: {
-            en: '↑'
-        },
+        name: '↑',
+        value: '↑',
         code: 'ArrowUp',
     },
     {
         size: 'wide',
         btnType: 'service',
-        name: {
-            en: 'Shift'
-        },
+        name: 'Shift',
         action: 'shift',
         code: 'ShiftRight',
     },
     {
         size: 'small',
         btnType: 'service',
-        name: {
-            en: 'Ctrl'
-        },
+        name: 'Ctrl',
         action: 'ctrl',
         code: 'ControlLeft',
     },
     {
         size: 'small',
         btnType: 'service',
-        name: {
-            en: 'Win'
-        },
+        name: 'Win',
         action: 'win',
         code: 'MetaLeft',
     },
     {
         size: 'small',
         btnType: 'service',
-        name: {
-            en: 'Alt'
-        },
+        name: 'Alt',
         action: 'alt',
         code: 'AltLeft',
     },
     {
         size: 'extrawide',
         btnType: 'input',
-        name: {
-            en: ''
-        },
-        value: {
-            en: ' '
-        },
+        name: '',
+        value: ' ',
         code: 'Space',
     },
     {
         size: 'small',
         btnType: 'service',
-        name: {
-            en: 'Alt'
-        },
+        name: 'Alt',
         action: 'alt',
         code: 'AltRight',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '←'
-        },
-        value: {
-            en: '←'
-        },
+        name: '←',
+        value: '←',
         code: 'ArrowLeft',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '↓'
-        },
-        value: {
-            en: '↓'
-        },
+        name: '↓',
+        value: '↓',
         code: 'ArrowDown',
     },
     {
         size: 'small',
         btnType: 'input',
-        name: {
-            en: '→'
-        },
-        value: {
-            en: '→'
-        },
+        name: '→',
+        value: '→',
         code: 'ArrowRight',
     },
     {
         size: 'small',
         btnType: 'service',
-        name: {
-            en: 'Ctrl'
-        },
+        name: 'Ctrl',
         action: 'ctrl',
         code: 'ControlRight',
     },

@@ -66,6 +66,14 @@ const actions = {
     },
 
     ctrl() {
+        if (this.isCtrlDown === false) {
+            if (localStorage.getItem('isCtrlPushed') === 'true') {
+                localStorage.setItem('isCtrlPushed', 'false')
+            } else {
+                localStorage.setItem('isCtrlPushed', 'true')
+            }
+        }
+        this.isCtrlDown = true
 
     },
 
@@ -74,10 +82,19 @@ const actions = {
     },
 
     alt() {
+        if (this.isAltDown === false) {
+            if (localStorage.getItem('isAltPushed') === 'true') {
+                localStorage.setItem('isAltPushed', 'false')
+            } else {
+                localStorage.setItem('isAltPushed', 'true')
+            }
+        }
+        this.isAltDown = true
 
     },
 
-
+    isCtrlDown: false,
+    isAltDown: false,
     isCapsDown: false,
     isShiftDown: false,
     mousedownNode: null,
@@ -90,7 +107,7 @@ export class Button {
     constructor({...btn}) {
         this.size = btn.size
         this.btnType = btn.btnType
-        this.name = btn.name.en
+        this.name = btn.name
         this.code = btn.code
         this.shiftName = btn.shiftName || null
         this.btn = this.createBtnNode()
@@ -130,6 +147,19 @@ export class Button {
                 actions.shift()
                 actions.isShiftDown = false
             }
+
+            if (this.code === 'AltLeft') {
+                actions.isAltDown = false
+                actions.alt()
+                actions.isAltDown = false
+            }
+
+            if (this.code === 'ControlLeft') {
+                actions.isCtrlDown = false
+                actions.ctrl()
+                actions.isCtrlDown = false
+            }
+
             if (this.code === 'CapsLock') {actions.isCapsDown = false}
         })
 
@@ -146,7 +176,7 @@ export class Button {
 export class InputButton extends Button {
     constructor({...btn}) {
         super({...btn});
-        this.value = btn.value.en
+        this.value = btn.value
     }
 
     handleClick(placeNode) {
