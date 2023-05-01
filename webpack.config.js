@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const postcss = require("postcss");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 
@@ -34,11 +35,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'main.css',
         }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: "src/assets", to: "assets" },
-            ],
-        }),
+
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         { from: "src/assets", to: "assets" },
+        //     ],
+        // }),
     ],
     module: {
         rules: [
