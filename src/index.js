@@ -22,6 +22,11 @@ window.onload = function(){
     body.append(info)
 
 
+    localStorage.setItem('isShiftPushed', 'false')
+    localStorage.setItem('isCtrlPushed', 'false')
+    localStorage.setItem('isAltPushed', 'false')
+
+
     const mousedownEvent = new MouseEvent('mousedown', {
         view: window,
         bubbles: true,
