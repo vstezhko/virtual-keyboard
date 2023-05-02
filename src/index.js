@@ -21,6 +21,7 @@ window.onload = function(){
 
 
     localStorage.setItem('isShiftPushed', 'false')
+    localStorage.setItem('isCapsPushed', 'false')
     localStorage.setItem('isCtrlPushed', 'false')
     localStorage.setItem('isAltPushed', 'false')
 
