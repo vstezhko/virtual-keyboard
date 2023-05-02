@@ -14,12 +14,23 @@ body {
   align-items: center;
 }
 
-
 textarea {
   width: 98rem;
   height: 200px;
   font-size: 2rem;
   padding: 1rem;
+  border: 1px solid hotpink;
+  border-radius: 3px;
+  margin-bottom: 10px;
+
+  &:focus {
+    border: 1px solid hotpink;
+    border-radius: 3px;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .keyboard {
@@ -27,7 +38,8 @@ textarea {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
-  border: 1px solid deeppink;
+  border: 1px solid antiquewhite;
+  border-radius: 3px;
   background-color: antiquewhite;
   width: 98rem;
 }
