@@ -9,8 +9,8 @@ const styles = {
 const actions = {
 
     backspace(node){
-        const start = node.selectionStart-1;
-        const end = node.selectionEnd-1;
+        const start = node.selectionStart - 1;
+        const end = node.selectionEnd - 1;
         if (start === end) {
             node.value = node.value.slice(0, start) + node.value.slice(start + 1);
             node.selectionStart = start
@@ -192,7 +192,7 @@ export class InputButton extends Button {
             } else {
                 placeNode.value = placeNode.value.slice(0, start) + this.value.toUpperCase() + placeNode.value.slice(start);
             }
-        } else if(isShiftPushed && isCapsPushed){
+        } else if (isShiftPushed && isCapsPushed){
             if (this.shiftName) {
                 placeNode.value = placeNode.value.slice(0, start) + this.shiftName + placeNode.value.slice(start);
             } else {

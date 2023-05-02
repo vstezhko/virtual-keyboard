@@ -35,12 +35,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'main.css',
         }),
+        new ESLintPlugin({
+            overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
+        }),
 
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //         { from: "src/assets", to: "assets" },
-        //     ],
-        // }),
     ],
     module: {
         rules: [

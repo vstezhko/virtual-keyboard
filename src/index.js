@@ -1,13 +1,11 @@
 import './index.html';
 import './main.scss';
-import {buttonsEn} from "./js/buttonsEn";
-import {buttonsRu} from "./js/buttonsRu";
-import {InputButton, ServiceButton} from "./js/Button";
+import {buttonsEn} from './js/buttonsEn';
+import {buttonsRu} from './js/buttonsRu';
+import {InputButton, ServiceButton} from './js/Button';
 
 
 window.onload = function(){
-
-
 
     const body = document.querySelector('body')
     const textArea = document.createElement('textarea')
@@ -17,8 +15,8 @@ window.onload = function(){
     body.append(keyboard)
     textArea.focus();
     const info = document.createElement('div')
-    info.innerHTML += `<p>Клавиатура создана в операционной системе Windows</p>`
-    info.innerHTML += `<p>Для переключения языка комбинация: левыe ctrl + alt</p>`
+    info.innerHTML += '<p>Клавиатура создана в операционной системе Windows</p>'
+    info.innerHTML += '<p>Для переключения языка комбинация: левыe ctrl + alt</p>'
     body.append(info)
 
 
@@ -95,10 +93,10 @@ window.onload = function(){
 
     }
 
-    const renderButtons = (buttons) => {
+    const renderButtons = (buttonsToRender) => {
         console.log('render')
         keyboard.innerHTML = ''
-        buttons.forEach(btn => {
+        buttonsToRender.forEach(btn => {
             let newBtn
 
             if (btn.btnType === 'input') {
@@ -116,6 +114,4 @@ window.onload = function(){
     renderButtons(buttons)
 
     alert('Уважаемые проверяющие, моя клавитатура работает, но еще не протестирована на предмет багов. Если есть возможность проверить позже, проверьте плиз позже. Спасибо!')
-
-
 }
