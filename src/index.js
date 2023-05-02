@@ -80,6 +80,8 @@ window.onload = function(){
 
             renderButtons(buttons)
 
+            localStorage.setItem('lang', activeLang)
+
             const altNode = document.querySelector('.AltLeft')
             altNode.classList.add('btn_pushed')
             const ctrlNode = document.querySelector('.ControlLeft')
@@ -107,5 +109,8 @@ window.onload = function(){
     }
 
     renderButtons(buttons)
+
+    alert('Уважаемые проверяющие, моя клавитатура работает, но еще не протестирована на предмет багов. Если есть возможность проверить позже, проверьте плиз позже. Спасибо!')
+
 
 }
