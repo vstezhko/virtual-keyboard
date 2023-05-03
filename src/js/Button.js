@@ -7,31 +7,34 @@ const styles = {
 export const actions = {
 
   backspace(node) {
+    const targetNode = node;
     const start = node.selectionStart - 1;
     const end = node.selectionEnd - 1;
     if (start === end) {
-      node.value = node.value.slice(0, start) + node.value.slice(start + 1);
-      node.selectionStart = start;
-      node.selectionEnd = start;
+      targetNode.value = node.value.slice(0, start) + node.value.slice(start + 1);
+      targetNode.selectionStart = start;
+      targetNode.selectionEnd = start;
     } else {
-      node.value = node.value.slice(0, start + 1) + node.value.slice(end + 1);
-      node.selectionStart = start + 1;
-      node.selectionEnd = start + 1;
+      targetNode.value = node.value.slice(0, start + 1) + node.value.slice(end + 1);
+      targetNode.selectionStart = start + 1;
+      targetNode.selectionEnd = start + 1;
     }
   },
 
   tab(node) {
+    const targetNode = node;
     const start = node.selectionStart;
-    node.value = `${node.value.slice(0, start)}\t${node.value.slice(start)}`;
-    node.selectionStart = start + 1;
-    node.selectionEnd = start + 1;
+    targetNode.value = `${node.value.slice(0, start)}\t${node.value.slice(start)}`;
+    targetNode.selectionStart = start + 1;
+    targetNode.selectionEnd = start + 1;
   },
 
   del(node) {
+    const targetNode = node;
     const start = node.selectionStart;
-    node.value = `${node.value.slice(0, start)}${node.value.slice(start + 1)}`;
-    node.selectionStart = start;
-    node.selectionEnd = start;
+    targetNode.value = `${node.value.slice(0, start)}${node.value.slice(start + 1)}`;
+    targetNode.selectionStart = start;
+    targetNode.selectionEnd = start;
   },
 
   capsLock() {
@@ -57,10 +60,11 @@ export const actions = {
   },
 
   enter(node) {
+    const targetNode = node;
     const start = node.selectionStart;
-    node.value = `${node.value.slice(0, start)}\n${node.value.slice(start)}`;
-    node.selectionStart = start + 1;
-    node.selectionEnd = start + 1;
+    targetNode.value = `${node.value.slice(0, start)}\n${node.value.slice(start)}`;
+    targetNode.selectionStart = start + 1;
+    targetNode.selectionEnd = start + 1;
   },
 
   ctrl() {

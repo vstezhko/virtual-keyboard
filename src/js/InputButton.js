@@ -7,39 +7,41 @@ class InputButton extends Button {
   }
 
   handleClick(placeNode) {
+    const targetNode = placeNode;
     const isShiftPushed = localStorage.getItem('isShiftPushed') === 'true';
     const isCapsPushed = localStorage.getItem('isCapsPushed') === 'true';
     const start = placeNode.selectionStart;
 
     if (!isShiftPushed && isCapsPushed) {
-      placeNode.value = placeNode.value.slice(0, start)
+      targetNode.value = placeNode.value.slice(0, start)
           + this.value.toUpperCase()
           + placeNode.value.slice(start);
     } else if (isShiftPushed && !isCapsPushed) {
       if (this.shiftName) {
-        placeNode.value = placeNode.value.slice(0, start)
+        targetNode.value = placeNode.value.slice(0, start)
             + this.shiftName + placeNode.value.slice(start);
       } else {
-        placeNode.value = placeNode.value.slice(0, start)
+        targetNode.value = placeNode.value.slice(0, start)
             + this.value.toUpperCase()
             + placeNode.value.slice(start);
       }
     } else if (isShiftPushed && isCapsPushed) {
       if (this.shiftName) {
-        placeNode.value = placeNode.value.slice(0, start)
+        targetNode.value = placeNode.value.slice(0, start)
             + this.shiftName
             + placeNode.value.slice(start);
       } else {
-        placeNode.value = placeNode.value.slice(0, start)
+        targetNode.value = placeNode.value.slice(0, start)
             + this.value
             + placeNode.value.slice(start);
       }
     } else {
-      placeNode.value = placeNode.value.slice(0, start) + this.value + placeNode.value.slice(start);
+      targetNode.value = placeNode.value.slice(0, start)
+          + this.value + placeNode.value.slice(start);
     }
 
-    placeNode.selectionStart = start + 1;
-    placeNode.selectionEnd = start + 1;
+    targetNode.selectionStart = start + 1;
+    targetNode.selectionEnd = start + 1;
   }
 
   getButtonNode(placeNode) {
