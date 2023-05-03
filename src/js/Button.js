@@ -58,7 +58,7 @@ export const actions = {
 
   enter(node) {
     const start = node.selectionStart;
-    node.value = `${node.value.slice(0, start)} '\n' ${node.value.slice(start)}`;
+    node.value = `${node.value.slice(0, start)}\n${node.value.slice(start)}`;
     node.selectionStart = start + 1;
     node.selectionEnd = start + 1;
   },
